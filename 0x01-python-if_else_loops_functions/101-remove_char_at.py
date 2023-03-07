@@ -6,4 +6,3 @@ def remove_char_at(str, n):
         return (s1 + s2)
     else:
         return (str)
-

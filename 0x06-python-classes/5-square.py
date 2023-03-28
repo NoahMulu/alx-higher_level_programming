@@ -1,35 +1,65 @@
 #!/usr/bin/python3
+""" Module Sqaure """
+
+
 class Square:
-
-    """ Class Square that defines methods and attributes for a square object"""
-
+    """ Square class defined by geometric shap
+        Attributes:
+            size (int): Size of square
+    """
     def __init__(self, size=0):
-        """ Class Constructor"""
+        """initializes the square
+        Args:
+            size (int): size of a side of the square
+        Returns:
+            None
+        """
         self.size = size
+
+    def area(self):
+        """
+        set square square area
+        Return:
+            the current square area (int)
+        """
+        return self.__size ** 2
 
     @property
     def size(self):
-        """ Private Attribute size Getter """
-        return (self.__size)
+        """
+        getter of size
+        Return:
+            Size of square
+        """
+        return self.__size
 
     @size.setter
     def size(self, value):
-        """ Private Attribute size Setter """
-        if not isinstance(value, int):
+        """
+        Setter of size
+        Args:
+            size (int): size of a side of the square
+        Raises
+            TypeError: if size is not int
+            ValueError: size less than 0
+        Returns:
+            None
+        """
+        if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
-            raise ValueError("size must be >= 0")
+                raise ValueError("size must be >= 0")
         else:
             self.__size = value
 
-    def area(self):
-        """ Method that calculates current square area """
-        return (self.__size * self.__size)
-
     def my_print(self):
-        """ Method that prints in stdout the square with the char # """
-        if self.size == 0:
+        """
+        print a square from the size using ##
+        Returns:
+            None
+        """
+        if self.__size == 0:
             print()
         else:
-            for i in range(self.size):
-                print('#' * self.size)
+            for x in range(self.size):
+                    print("#" * self.size)

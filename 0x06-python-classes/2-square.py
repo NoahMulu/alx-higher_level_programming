@@ -1,11 +1,22 @@
-#!/usr/bin/python3
+=#!/usr/bin/python3
+""" Module Sqaure """
+
+
 class Square:
-
-    """ Class Square that defines methods and attributes for a square object"""
-
+    """ Square class defined by geometric shap
+        Attributes:
+            size (int): Size of square
+    """
     def __init__(self, size=0):
-        """ Class Constructor"""
-        if not isinstance(size, int):
+        """
+        Initialize methode
+        Args:
+            size (int): int to assign to square size
+        Raises:
+            TypeError: if size is not int
+            ValueError: size less than 0
+        """
+        if type(size) != int:
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
